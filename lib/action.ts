@@ -12,8 +12,8 @@ export const sendEmail = async (data: FormData) => {
     return { error: reslut.error };
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
-  const email = process.env.EMAIL_ADDRESS;
+  const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+  const email = process.env.NEXT_PUBLIC_EMAIL_ADDRESS;
 
   const { error } = await resend.emails.send({
     from: `riki <${email}>`,
