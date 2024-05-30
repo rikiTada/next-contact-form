@@ -1,0 +1,19 @@
+{
+  "name": "test用",
+  "description": "test用",
+  "author": "test用",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "tabs", "storage"],
+  "action": {
+    "default_icon": {
+      "48": "images/extension_48.png"
+    }
+  },
+  "background": {
+    "service_worker": "extensions/background.js"
+  },
+  "icons": {
+    "48": "images/extension_48.png"
+  }
+}
