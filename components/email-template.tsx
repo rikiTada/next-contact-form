@@ -17,9 +17,8 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "";
+const url = "next-contact-form-red.vercel.app";
+const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${url}` : "";
 
 export const EmailTemplate: React.FC<Readonly<FormData>> = ({
   name,
