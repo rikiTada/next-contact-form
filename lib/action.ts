@@ -2,9 +2,6 @@
 
 import { FormData, formSchema } from "@/schema/schema";
 
-import { EmailTemplate } from "@/components/email-template";
-import { Resend } from "resend";
-
 export const sendEmail = async (data: FormData) => {
   const reslut = formSchema.safeParse(data);
 
@@ -12,18 +9,13 @@ export const sendEmail = async (data: FormData) => {
     return { error: reslut.error };
   }
 
-  const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-  const email = process.env.NEXT_PUBLIC_EMAIL_ADDRESS;
-
-  const { error } = await resend.emails.send({
-    from: `riki <${email}>`,
-    to: [data.email],
-    subject: "お問い合わせありがとうございます！",
-    react: EmailTemplate(data),
-    text: `ようこそ, {data.name}さん！`,
+  const result = await fetch("/api/send", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
   });
 
-  if (error) {
-    return { error };
-  }
+  console.log(result.status);
 };

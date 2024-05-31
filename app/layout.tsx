@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Toolbar from "@/components/toolbar";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Dev Tools",
@@ -25,6 +26,7 @@ export default function RootLayout({
         >
           {children}
           <Toolbar />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
