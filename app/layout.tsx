@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import Toolbar from "@/components/toolbar";
+import { ThemeProvider } from "@/components/layout/theme-provider";
+import Toolbar from "@/components/layout/toolbar";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {

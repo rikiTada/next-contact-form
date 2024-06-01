@@ -1,5 +1,5 @@
 import { Folders, Home, Settings } from "lucide-react";
-import ToolbarButton from "@/components/toolbar-button";
+import ToolbarButton from "@/components/layout/toolbar-button";
 import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Toolbar() {
