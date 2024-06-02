@@ -17,5 +17,7 @@ export const sendEmail = async (data: FormData) => {
     body: JSON.stringify(data),
   });
 
-  console.log(result.status);
+  if (!result.ok) {
+    return { error: result.statusText };
+  }
 };
