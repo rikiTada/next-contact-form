@@ -7,7 +7,8 @@
     "build": "next build",
     "build:extension": "next build&&move dist/_next dist/next&&sed -i '' -e 's/\\/_next/\\.\\/next/g' dist/**.html",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "email:dev": "email dev -p 3001"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.4.2",
@@ -23,6 +24,7 @@
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-email": "2.1.4",
     "react-hook-form": "^7.51.5",
     "resend": "^3.2.0",
     "sonner": "^1.4.41",
