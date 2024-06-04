@@ -71,34 +71,42 @@ export const EmailTemplate: React.FC<Readonly<FormData>> = ({
             </Section>
 
             <Section className="my-8 text-zinc-600 px-6 py-2 bg-zinc-100 rounded flex justify-center">
-              <Text className="text-[0.75rem] w-full text-center">
-                お問い合わせ内容
+              <Text className="text-[0.75rem] w-full -mb-2 text-center">
+                【 お問い合わせ内容 】
               </Text>
               <Text className="text-lg text-center">{body}</Text>
             </Section>
 
             <Section className="my-8">
               <Text className="text-zinc-800 text-center text-sm whitespace-pre">
-                お問い合わせいただいた内容について、 <br />
+                お問い合わせいただいた内容について
+              </Text>
+              <Text className="text-zinc-800 text-center text-sm whitespace-pre">
                 {email} 宛に、
-                <br />
+              </Text>
+              <Text className="text-zinc-800 text-center text-sm whitespace-pre">
                 近日中お返事をさせていただきます。
               </Text>
-
-              <Text className="text-zinc-500 text-center text-xs text-[1em] whitespace-pre">
+              <Text className="text-zinc-500 text-center text-xs text-[1em]">
                 ※お問い合わせいただいた内容によっては、返信に数日かかる場合もございます。
               </Text>
             </Section>
 
             <Hr className="border border-solid border-zinc-200 my-7 mx-0 w-full" />
 
-            <Section className="text-center my-8 flex justify-center ">
+            <Section className="text-center my-8">
               <Button
                 className="bg-zinc-800 rounded text-white text-sm font-semibold no-underline text-center px-5 py-3"
                 href={`${baseUrl}`}
               >
                 トップページに戻る
               </Button>
+            </Section>
+
+            <Section className="mt-8">
+              <Text className="text-zinc-500 text-center text-xs text-[.45rem] ">
+                ※このメールは、自動配信システムを利用し、送信専用のメールアドレスから配信しております。本メールにご返信いただいてもお答えできませんのでご了承ください。
+              </Text>
             </Section>
           </Container>
         </Body>
