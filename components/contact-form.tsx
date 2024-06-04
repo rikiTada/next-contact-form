@@ -13,7 +13,6 @@ import { sendEmail } from "@/lib/action";
 import { FormData, formSchema } from "@/schema/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -58,7 +57,7 @@ export default function ContactForm({
   };
 
   return (
-    <div className="w-3/4 md:w-1/2 my-10 grid gap-8 py-8 container border border-zinc-400/50 rounded-md">
+    <div className="w-3/4 md:w-1/2 my-16 grid gap-8 py-8 container bg-card border border-zinc-400/50 rounded-md">
       <Form {...form}>
         <form
           className="flex flex-col gap-6"

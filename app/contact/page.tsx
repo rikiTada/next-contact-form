@@ -8,7 +8,7 @@ export default function Contact() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   return (
-    <div className="bg-muted/30">
+    <div className="bg-muted/10">
       <ContactForm setIsLoading={setIsLoading} />
       <Loading isLoading={isLoading} />
     </div>

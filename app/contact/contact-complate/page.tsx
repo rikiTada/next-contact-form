@@ -6,7 +6,7 @@ export default function Page() {
     <div className="container bg-primary-foreground flex-1 py-10">
       <h2 className="text-xl">お問い合わせ ありがとうございました！</h2>
       <Button variant="outline" size="sm" asChild className="mt-10">
-        <Link href="/">戻る</Link>
+        <Link href="/">TOPへ戻る</Link>
       </Button>
     </div>
   );
