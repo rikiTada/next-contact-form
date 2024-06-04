@@ -18,7 +18,11 @@ import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
-export default function ContactForm() {
+export default function ContactForm({
+  setIsLoading,
+}: {
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const router = useRouter();
 
   const form = useForm({
@@ -33,7 +37,9 @@ export default function ContactForm() {
   const { errors, isDirty, isValid } = form.formState;
 
   const onSubmit = async (data: FormData) => {
+    setIsLoading(true);
     const result = await sendEmail(data);
+    setIsLoading(false);
 
     if (result?.error) {
       toast.error("送信失敗", {
@@ -45,7 +51,9 @@ export default function ContactForm() {
         description: "お問い合わせを受け付けしました。",
       });
 
-      router.push("/contact/contact-complate");
+      setTimeout(() => {
+        router.push("/contact/contact-complate");
+      }, 1000);
     }
   };
 
