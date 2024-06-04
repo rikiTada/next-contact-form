@@ -16,9 +16,9 @@ import { useForm } from "react-hook-form";
 import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export default function ContactForm() {
-  const { toast } = useToast();
   const router = useRouter();
 
   const form = useForm({
@@ -33,14 +33,20 @@ export default function ContactForm() {
   const { errors, isDirty, isValid } = form.formState;
 
   const onSubmit = async (data: FormData) => {
-    await sendEmail(data);
+    const result = await sendEmail(data);
 
-    toast({
-      title: "送信完了",
-      description: "お問い合わせを受け付けしました。",
-    });
+    if (result?.error) {
+      toast.error("送信失敗", {
+        description:
+          "何らかの問題が発生しました。時間を置いてから、やり直してください。",
+      });
+    } else {
+      toast.success("送信完了", {
+        description: "お問い合わせを受け付けしました。",
+      });
 
-    router.push("/contact/contact-complate");
+      router.push("/contact/contact-complate");
+    }
   };
 
   return (

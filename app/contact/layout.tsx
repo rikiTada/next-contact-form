@@ -3,7 +3,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import "../globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/layout/theme-provider";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "sonner";
 import Header from "@/components/layout/header";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function ContactLayout({
         >
           <Header title="お問い合わせ" />
           {children}
-          <Toaster />
+          <Toaster richColors />
         </ThemeProvider>
       </body>
     </html>
