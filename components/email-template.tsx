@@ -11,10 +11,9 @@ import {
   Container,
   Section,
   Img,
-  Column,
-  Row,
   Hr,
 } from "@react-email/components";
+import { MessageSquareMore, SquareArrowOutUpRight } from "lucide-react";
 import * as React from "react";
 
 const url = "next-contact-form-red.vercel.app";
@@ -33,60 +32,66 @@ export const EmailTemplate: React.FC<Readonly<FormData>> = ({
       <Preview>{previewText}</Preview>
 
       <Tailwind>
-        <Body className="bg-white my-auto mx-auto font-sans px-2">
-          <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] max-w-[465px]">
-            <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-              <strong>{name}</strong>さん、お問い合わせが<strong>完了</strong>
-              しました。
-            </Heading>
+        <Body className="bg-zinc-100 my-auto mx-auto font-sans px-2 [font-size:62.5%]">
+          <Container className="border border-solid bg-white border-zinc-200 rounded-md my-10 mx-auto p-5 max-w-[465px]">
+            {/* Service Logo */}
+            {/* <Section>
+              <Img src={`${baseUrl}/`} width="96" height="30" alt="Logo" />
+            </Section> */}
 
-            <Text></Text>
-            <Text className="text-black text-[14px] leading-[24px]">
-              {name}さん。この度は、お問い合わせありがとうございます！
-            </Text>
-            <Text>メールアドレス: {email}</Text>
-
-            <Section>
-              <Row>
-                <Column align="right">
-                  <Img
-                    className="rounded-full"
-                    src={`${baseUrl}/icon/admin.png`}
-                    width="64"
-                    height="64"
-                  />
-                </Column>
-                <Column align="center">
-                  <Img
-                    src={`${baseUrl}/icon/vercel-arrow.png`}
-                    width="12"
-                    height="9"
-                    alt="invited you to"
-                  />
-                </Column>
-                <Column align="left">
-                  <Img
-                    className="rounded-full"
-                    src={`${baseUrl}/icon/animal_hiyoko.png`}
-                    width="64"
-                    height="64"
-                  />
-                </Column>
-              </Row>
+            <Section className="my-8">
+              <Heading className="text-zinc-800 text-center text-8 text-2xl font-medium">
+                お問い合わせが完了しました。
+              </Heading>
             </Section>
 
-            <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
+            <Section className="flex justify-center my-8">
+              <Img
+                className="rounded-full border border-zinc-200"
+                src={`${baseUrl}/icon/animal_hiyoko.png`}
+                max-width="96"
+                height="96"
+                alt="user"
+              />
+            </Section>
 
-            <Text className="text-lg text-[#484848] p-6 bg-[#f2f3f3] rounded">
-              {body}
-            </Text>
+            <Section className="my-8">
+              <Text className="text-zinc-800 text-center text-sm whitespace-pre">
+                <strong>{name}</strong> 様 <br />
+                この度は、お問い合わせありがとうございます！
+              </Text>
+            </Section>
 
-            <Section className="text-center mt-[32px] mb-[32px]">
+            <Section className="my-8 text-zinc-600 px-6 py-2 bg-zinc-100 rounded flex justify-center">
+              <Text className="text-[0.75rem]  w-full flex gap-2 justify-center items-center ">
+                <span className=" border-b">お問い合わせ内容</span>
+                <MessageSquareMore size={16} className="" />
+              </Text>
+              <Text className="text-lg text-center">{body}</Text>
+            </Section>
+
+            <Section className="my-8">
+              <Text className="text-zinc-800 text-center text-sm whitespace-pre">
+                お問い合わせいただいた内容について、 <br />
+                {email} 宛に、 近日中お返事をさせていただきます。
+              </Text>
+
+              <Text className="text-zinc-500 text-center text-xs text-[1em] whitespace-pre">
+                ※お問い合わせいただいた内容によっては、返信に数日かかる場合もございます。
+              </Text>
+            </Section>
+
+            <Hr className="border border-solid border-zinc-200 my-7 mx-0 w-full" />
+
+            <Section className="text-center my-8 flex justify-center ">
               <Button
-                className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
+                className="bg-zinc-800 rounded text-white text-sm font-semibold no-underline text-center px-5 py-3"
                 href={`${baseUrl}`}
               >
-                トップページに戻る
+                <div className="flex items-center gap-2">
+                  トップページに戻る
+                  <SquareArrowOutUpRight size={14} />
+                </div>
               </Button>
             </Section>
           </Container>
