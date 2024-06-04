@@ -12,8 +12,10 @@ import {
   Section,
   Img,
   Hr,
+  Row,
+  Column,
+  Link,
 } from "@react-email/components";
-import { MessageSquareMore, SquareArrowOutUpRight } from "lucide-react";
 import * as React from "react";
 
 const url = "next-contact-form-red.vercel.app";
@@ -45,14 +47,20 @@ export const EmailTemplate: React.FC<Readonly<FormData>> = ({
               </Heading>
             </Section>
 
-            <Section className="flex justify-center my-8">
-              <Img
-                className="rounded-full border border-zinc-200"
-                src={`${baseUrl}/icon/animal_hiyoko.png`}
-                max-width="96"
-                height="96"
-                alt="user"
-              />
+            <Section className="my-8">
+              <Row>
+                <Column align="center">
+                  <Link href={`${baseUrl}`}>
+                    <Img
+                      className="rounded-full border border-zinc-200"
+                      src={`${baseUrl}/icon/animal_hiyoko.png`}
+                      max-width="96"
+                      height="96"
+                      alt="user"
+                    />
+                  </Link>
+                </Column>
+              </Row>
             </Section>
 
             <Section className="my-8">
@@ -63,9 +71,8 @@ export const EmailTemplate: React.FC<Readonly<FormData>> = ({
             </Section>
 
             <Section className="my-8 text-zinc-600 px-6 py-2 bg-zinc-100 rounded flex justify-center">
-              <Text className="text-[0.75rem]  w-full flex gap-2 justify-center items-center ">
-                <span className=" border-b">お問い合わせ内容</span>
-                <MessageSquareMore size={16} className="" />
+              <Text className="text-[0.75rem] w-full text-center">
+                お問い合わせ内容
               </Text>
               <Text className="text-lg text-center">{body}</Text>
             </Section>
@@ -73,7 +80,9 @@ export const EmailTemplate: React.FC<Readonly<FormData>> = ({
             <Section className="my-8">
               <Text className="text-zinc-800 text-center text-sm whitespace-pre">
                 お問い合わせいただいた内容について、 <br />
-                {email} 宛に、 近日中お返事をさせていただきます。
+                {email} 宛に、
+                <br />
+                近日中お返事をさせていただきます。
               </Text>
 
               <Text className="text-zinc-500 text-center text-xs text-[1em] whitespace-pre">
@@ -88,10 +97,7 @@ export const EmailTemplate: React.FC<Readonly<FormData>> = ({
                 className="bg-zinc-800 rounded text-white text-sm font-semibold no-underline text-center px-5 py-3"
                 href={`${baseUrl}`}
               >
-                <div className="flex items-center gap-2">
-                  トップページに戻る
-                  <SquareArrowOutUpRight size={14} />
-                </div>
+                トップページに戻る
               </Button>
             </Section>
           </Container>
