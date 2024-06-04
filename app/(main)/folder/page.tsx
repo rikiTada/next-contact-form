@@ -1,10 +1,10 @@
-import Link from "next/link";
+import Header from "@/components/layout/header";
 import React from "react";
 
 export default function Folder() {
   return (
-    <div className="text-3xl h-screen">
-      <Link href="/">Folder</Link>
-    </div>
+    <>
+      <Header title="Folder" />
+    </>
   );
 }

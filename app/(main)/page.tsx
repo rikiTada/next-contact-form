@@ -1,5 +1,9 @@
-import Link from "next/link";
+import Header from "@/components/layout/header";
 
 export default async function Home() {
-  return <Link href="/contact">⇒ Contact</Link>;
+  return (
+    <div className="">
+      <Header title="Home" />
+    </div>
+  );
 }

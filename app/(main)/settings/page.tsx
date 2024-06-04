@@ -1,10 +1,10 @@
-import Link from "next/link";
+import Header from "@/components/layout/header";
 import React from "react";
 
 export default function Settings() {
   return (
-    <div className="text-3xl h-screen">
-      <Link href="/">Settings</Link>
-    </div>
+    <>
+      <Header title="Settings" />
+    </>
   );
 }
