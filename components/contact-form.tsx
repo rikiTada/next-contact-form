@@ -1,14 +1,7 @@
 "use client";
 
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Form } from "@/components/ui/form";
+import { DevTool } from "@hookform/devtools";
 import { sendEmail } from "@/lib/action";
 import { FormData, formSchema } from "@/schema/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -107,6 +100,7 @@ export default function ContactForm({
           </div>
         </form>
       </Form>
+      <DevTool control={form.control} />
     </div>
   );
 }
